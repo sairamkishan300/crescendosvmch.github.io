@@ -179,7 +179,7 @@
         top: 80px;
         left: 0;
         background: #333;
-        width: 100%;
+        width: 90%;
         overflow: hidden;
         transition: max-height 0.5s;
     }
