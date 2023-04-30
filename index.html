@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Crescendo Score Board</title>
     <!-- WebPage logo-->
-    <link rel="icon" href="path/to/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="https://www.creativefabrica.com/wp-content/uploads/2020/10/03/Festival-Logo-Vector-Modern-Symbol-Graphics-5833150-2-580x386.png" type="image/x-icon">
     <!-- FontAwesome Icons -->
     <link
       rel="stylesheet"
@@ -18,38 +18,40 @@
     <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
+  <body onload="initClock()">
 
+<!-------- logo and menu section ------->
     <div class="banner">
         <div class="navbar">
             <img src="images/logo.png" class="logo">
             <nav>
                 <img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
                 <ul id="MenuItems">
-                    <li><a href="https://crescendosvmch.github.io/">Home</a></li>
-                    <li><a href="https://crescendosvmch.github.io/">About</a></li>
-                    <li><a href="https://crescendosvmch.github.io/">Scores</a></li>
-                    <li><a href="https://crescendosvmch.github.io/">gallary</a></li>
+                    <li><a href= "" >Home</a></li>
+                    <li><a href="scores/index.html">About</a></li>
+                    <li><a href="scores/index.html">Scores</a></li>
+                    <li><a href="https://www.instagram.com/crescendo_svmch/">gallery</a></li>
                 </ul>
             </nav>
         </div>
 
-    <div class="title">
-        <h1>CRESCENDO'23</h1>
-    </div>
 
+<!-------- Score section ------->
+    <div class="title">
+      <h1>CRESCENDO'23 POINTS</h1>
+    </div>
 
     <div class="wrapper">
       <div class="container">
         <i class="fa-solid fa-skull"></i>
         <span class="num" data-val="20">000</span>
-        <span class="text">Cranium Crushers</span>
+        <span class="text">Kranium Krushers</span>
       </div>
 
       <div class="container">
         <i class="fa-solid fa-user-ninja"></i>
         <span class="num" data-val="70">000</span>
-        <span class="text">Silent Assasins</span>
+        <span class="text">Silent Assassins</span>
       </div>
 
       <div class="container">
@@ -66,6 +68,66 @@
     </div>
     <!-- Script -->
     <script src="script.js"></script>
+  
+<!-------- Date And Time ------->
+
+    <!--digital clock start-->
+    <div class="datetime">
+      <div class="date">
+        <span id="dayname">Day</span>,
+        <span id="month">Month</span>
+        <span id="daynum">00</span>,
+        <span id="year">Year</span>
+      </div>
+      <div class="time">
+        <span id="hour">00</span>:
+        <span id="minutes">00</span>:
+        <span id="seconds">00</span>
+        <span id="period">AM</span>
+      </div>
+    </div>
+    <!--digital clock end-->
+
+    <script type="text/javascript">
+    function updateClock(){
+      var now = new Date();
+      var dname = now.getDay(),
+          mo = now.getMonth(),
+          dnum = now.getDate(),
+          yr = now.getFullYear(),
+          hou = now.getHours(),
+          min = now.getMinutes(),
+          sec = now.getSeconds(),
+          pe = "AM";
+
+          if(hou >= 12){
+            pe = "PM";
+          }
+          if(hou == 0){
+            hou = 12;
+          }
+          if(hou > 12){
+            hou = hou - 12;
+          }
+
+          Number.prototype.pad = function(digits){
+            for(var n = this.toString(); n.length < digits; n = 0 + n);
+            return n;
+          }
+
+          var months = ["January", "February", "March", "April", "May", "June", "July", "Augest", "September", "October", "November", "December"];
+          var week = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+          var ids = ["dayname", "month", "daynum", "year", "hour", "minutes", "seconds", "period"];
+          var values = [week[dname], months[mo], dnum.pad(2), yr, hou.pad(2), min.pad(2), sec.pad(2), pe];
+          for(var i = 0; i < ids.length; i++)
+          document.getElementById(ids[i]).firstChild.nodeValue = values[i];
+    }
+
+    function initClock(){
+      updateClock();
+      window.setInterval("updateClock()", 1);
+    }
+    </script>
 
     <!-------- js for toggle menu ------->
 <script>
@@ -82,5 +144,22 @@
         }
     }
 </script>
+
+<!-------- Footer section ------->
+
+<div class="footer-basic">
+  <footer>
+      <div class="social"><a href="https://www.instagram.com/crescendo_svmch/"><i class="fa-brands fa-instagram"></i></a></div>
+      <ul class="list-inline">
+         <li class="list-inline-item"><a href="https://www.instagram.com/crescendo_svmch/">Click to Follow on Instagram</a></li> 
+      </ul>
+      <p class="copyright">SaiRamKishan © 2023</p>
+  </footer>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+
+
+
   </body>
 </html>
