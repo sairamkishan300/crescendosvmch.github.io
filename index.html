@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crescendo Score Board</title>
+    <!-- WebPage logo-->
+    <link rel="icon" href="path/to/favicon.ico" type="image/x-icon">
+    <!-- FontAwesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+
+    <div class="banner">
+        <div class="navbar">
+            <img src="images/logo.png" class="logo">
+            <nav>
+                <img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
+                <ul id="MenuItems">
+                    <li><a href="https://sairamkishan300.github.io/">Home</a></li>
+                    <li><a href="https://sairamkishan300.github.io/store/">Store</a></li>
+                    <li><a href="https://sairamkishan300.github.io/music/">Music</a></li>
+                    <li><a href="https://sairamkishan300.github.io/error/">Gaming</a></li>
+                </ul>
+            </nav>
+        </div>
+
+    <div class="title">
+        <h1>CRESCENDO'23</h1>
+    </div>
+
+
+    <div class="wrapper">
+      <div class="container">
+        <i class="fa-solid fa-skull"></i>
+        <span class="num" data-val="20">000</span>
+        <span class="text">Cranium Crushers</span>
+      </div>
+
+      <div class="container">
+        <i class="fa-solid fa-user-ninja"></i>
+        <span class="num" data-val="70">000</span>
+        <span class="text">Silent Assasins</span>
+      </div>
+
+      <div class="container">
+        <i class="fa-solid fa-khanda"></i>
+        <span class="num" data-val="25">000</span>
+        <span class="text">Venomous Vipers</span>
+      </div>
+
+      <div class="container">
+        <i class="fa-solid fa-spider"></i>
+        <span class="num" data-val="35">000</span>
+        <span class="text">Xtreme Mutants</span>
+      </div>
+    </div>
+    <!-- Script -->
+    <script src="script.js"></script>
+
+    <!-------- js for toggle menu ------->
+<script>
+    var MenuItems = document.getElementById("MenuItems");
+
+    MenuItems.style.maxHeight = "0px";
+
+    function menutoggle(){
+        if(MenuItems.style.maxHeight == "0px"){
+            MenuItems.style.maxHeight = "200px";
+        }
+        else{
+            MenuItems.style.maxHeight = "0px";
+        }
+    }
+</script>
+  </body>
+</html>
