@@ -23,6 +23,8 @@
 .title h1{
     font-size: 60px;
     margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
     margin-bottom: 30px;
     transition: color 0.5s 
 }
@@ -180,6 +182,9 @@
         overflow: hidden;
         transition: max-height 0.5s;
     }
+    .title h1{
+        font-size: 40px;
+    }
 
     .navbar nav ul li{
         display: block;
@@ -187,7 +192,6 @@
         margin-top: 10px;
         margin-bottom: 10px;
     }
-
     .navbar nav ul li a{
         color: white;
     }
@@ -204,5 +208,8 @@
     }
     .col-2, col-3, col-4{
         flex-basis: 100%;
+    }
+    .title h1{
+        font-size: 30px;
     }
 }
